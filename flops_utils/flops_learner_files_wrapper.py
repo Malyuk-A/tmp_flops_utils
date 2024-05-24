@@ -7,14 +7,22 @@
 
 import sys
 
+import datasets
+
 from flops_utils.logging import logger
 
 
-def load_ml_data():
-    try:
-        from data_loading import load_data_from_worker_node  # type: ignore
+def load_dataset() -> datasets.Dataset:
+    """Loads the data from the co-located ml-data-server from the learner node.
 
-        return load_data_from_worker_node()
+    Returns a single dataset that encompasses all matching found data from the server.
+    This dataset is in "Arrow" format.
+    """
+
+    try:
+        from data_loading import load_data_from_ml_data_server  # type: ignore
+
+        return load_data_from_ml_data_server()
     except ImportError:
         logger.exception("The data_loading file was not found.")
         sys.exit(1)
