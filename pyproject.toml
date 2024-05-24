@@ -15,8 +15,8 @@ paho-mqtt = "2.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-packages = ["flops_utils/*"]
+#packages = ["flops_utils/*"]
 
 
-line-length = 100
-[tool.black]
+#line-length = 100
+#[tool.black]
