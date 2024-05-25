@@ -1,4 +1,4 @@
-# Note: This wrapper is used to handle ml repo files
+# Note: This proxy is used to handle ml repo files
 # which get injected during the image build.
 # I.e. these files are not yet present.
 # Additionally it handles exceptions and helps linters, etc to work normally.

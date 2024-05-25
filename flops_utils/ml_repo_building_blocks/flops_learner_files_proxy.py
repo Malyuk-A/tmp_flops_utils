@@ -1,4 +1,4 @@
-# Note: This wrapper is used to provide ML repo developers/users with mock FLOps Learner components.
+# Note: This proxy is used to provide ML repo developers/users with stub FLOps Learner components.
 # E.g. The ML repo developer does not have access to any data of the worker nodes yet.
 # This data will be fetched by the Learner's data_loading from the Data Manager Sidecar.
 # This data_loading is part of the Learner image and should be abstracted away from the ML repo.
