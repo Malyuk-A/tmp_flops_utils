@@ -23,16 +23,18 @@ class Status(CustomEnum):
 
 @dataclasses.dataclass
 class Topic:
-    target: Target = Target.FLOPS_MANAGER
     subject: Subject
     status: Status
+    target: Target = Target.FLOPS_MANAGER
 
     def __str__(self) -> str:
         return f"{self.target}/{self.subject}/{self.status}"
 
 
 class SupportedTopic(CustomEnum):
-    PROJECT_OBSERVER_FAILED = str(Topic(subject=Subject.PROJECT_OBSERVER, status=Status.FAILED))
+    PROJECT_OBSERVER_FAILED = str(
+        Topic(subject=Subject.PROJECT_OBSERVER, status=Status.FAILED)
+    )
 
     FL_ACTORS_IMAGE_BUILDER_SUCCESS = str(
         Topic(subject=Subject.FL_ACTORS_IMAGE_BUILDER, status=Status.SUCCESS)
