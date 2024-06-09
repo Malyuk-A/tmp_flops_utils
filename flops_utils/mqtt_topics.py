@@ -32,9 +32,7 @@ class Topic:
 
 
 class SupportedTopic(CustomEnum):
-    PROJECT_OBSERVER_FAILED = str(
-        Topic(subject=Subject.PROJECT_OBSERVER, status=Status.FAILED)
-    )
+    PROJECT_OBSERVER_FAILED = str(Topic(subject=Subject.PROJECT_OBSERVER, status=Status.FAILED))
 
     FL_ACTORS_IMAGE_BUILDER_SUCCESS = str(
         Topic(subject=Subject.FL_ACTORS_IMAGE_BUILDER, status=Status.SUCCESS)
