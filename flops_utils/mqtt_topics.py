@@ -30,6 +30,12 @@ class Topic:
     def __str__(self) -> str:
         return f"{self.target}/{self.subject}/{self.status}"
 
+    def find_matching_supported_topic(self) -> "SupportedTopic":
+        for topic in SupportedTopic:
+            if str(self) == topic.value:
+                return topic
+        raise ValueError(f"'{str(self)}' has no matching supported topic.")
+
 
 class SupportedTopic(CustomEnum):
     PROJECT_OBSERVER_FAILED = str(
