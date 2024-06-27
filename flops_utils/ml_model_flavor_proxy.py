@@ -11,16 +11,16 @@ from flops_utils.types import MLModelFlavor
 def get_ml_model_flavor():
     match MLModelFlavor(os.environ.get("ML_MODEL_FLAVOR")):
         case MLModelFlavor.KERAS:
-            import mlflow.keras
+            import mlflow.keras  # type: ignore
 
             return mlflow.keras
         case MLModelFlavor.PYTORCH:
-            import mlflow.pytorch
+            import mlflow.pytorch  # type: ignore
 
             return mlflow.pytorch
 
         case MLModelFlavor.SKLEARN:
-            import mlflow.sklearn
+            import mlflow.sklearn  # type: ignore
 
             return mlflow.sklearn
         case _:

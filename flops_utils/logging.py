@@ -32,7 +32,7 @@ class CustomFormatter(logging.Formatter):
             self.FORMATS = {level: base_fmt for level in logging._levelToName.values()}
 
     def format(self, record):
-        log_fmt = self.FORMATS.get(record.levelno)
+        log_fmt = self.FORMATS.get(record.levelno)  # type: ignore
         formatter = logging.Formatter(log_fmt)
         return formatter.format(record)
 

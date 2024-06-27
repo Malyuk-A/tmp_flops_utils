@@ -1,13 +1,13 @@
 from dataclasses import dataclass, field
-from datetime import datetime
-from typing import Dict, Union
+from datetime import datetime, timedelta
+from typing import Dict, Optional, Union
 
 
 def _get_duration(
     start: datetime,
     end: datetime,
     human_readable: bool = False,
-) -> Union[float, str]:
+) -> Union[timedelta, str]:
     duration = end - start
     if not human_readable:
         return duration
@@ -24,13 +24,13 @@ def _get_duration(
 @dataclass
 class TimeFrame:
     start_time: datetime = field(default_factory=datetime.now, init=False)
-    end_time: datetime = field(default=None, init=False)
+    end_time: Optional[datetime] = field(default=None, init=False)
 
     def end_time_frame(self) -> datetime:
         self.end_time = datetime.now()
         return self.end_time
 
-    def get_duration(self, human_readable: bool = False) -> Union[float, str]:
+    def get_duration(self, human_readable: bool = False) -> Union[timedelta, str]:
         return _get_duration(
             start=self.start_time,
             end=(self.end_time or self.end_time_frame()),
@@ -69,7 +69,7 @@ class Timer:
         timestamp_a_name: str,
         timestamp_b_name: str,
         human_readable: bool = False,
-    ) -> Union[float, str]:
+    ) -> Union[timedelta, str]:
         return _get_duration(
             start=self.time_stamps[timestamp_a_name],
             end=self.time_stamps[timestamp_b_name],
