@@ -15,3 +15,15 @@ class MLModelFlavor(str, enum.Enum):
     TENSORFLOW = "tensorflow"
     KERAS = "keras"
     # This list can be further expanded.
+
+
+class FLOpsMode(str, enum.Enum):
+    CLASSIC = "classic"
+    HIERARCHICAL = "hierarchical"
+
+
+class AggregatorType(enum.Enum):
+    CLASSIC_AGGREGATOR = "CLASSIC_AGGREGATOR"
+
+    ROOT_AGGREGATOR = "ROOT_AGGREGATOR"
+    CLUSTER_AGGREGATOR = "CLUSTER_AGGREGATOR"
