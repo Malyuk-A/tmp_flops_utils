@@ -25,7 +25,6 @@ class FLOpsMode(str, enum.Enum):
 class PlatformSupport(str, enum.Enum):
     LINUX_AMD64 = "linux/amd64"
     LINUX_ARM64 = "linux/arm64"
-    ALL = "all"
 
 
 class AggregatorType(enum.Enum):
