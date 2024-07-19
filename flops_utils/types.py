@@ -22,7 +22,7 @@ class FLOpsMode(str, enum.Enum):
     HIERARCHICAL = "hierarchical"
 
 
-class ArchitectureSupport(str, enum.Enum):
+class PlatformSupport(str, enum.Enum):
     LINUX_AMD64 = "linux/amd64"
     LINUX_ARM64 = "linux/arm64"
     ALL = "all"
