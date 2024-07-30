@@ -43,6 +43,9 @@ class SupportedTopic(CustomEnum):
         Topic(subject=Subject.PROJECT_OBSERVER, status=Status.FAILED)
     )
 
+    FL_ACTORS_IMAGE_BUILDER_STARTED = str(
+        Topic(subject=Subject.FL_ACTORS_IMAGE_BUILDER, status=Status.STARTED)
+    )
     FL_ACTORS_IMAGE_BUILDER_SUCCESS = str(
         Topic(subject=Subject.FL_ACTORS_IMAGE_BUILDER, status=Status.SUCCESS)
     )
@@ -50,6 +53,9 @@ class SupportedTopic(CustomEnum):
         Topic(subject=Subject.FL_ACTORS_IMAGE_BUILDER, status=Status.FAILED)
     )
 
+    TRAINED_MODEL_IMAGE_BUILDER_STARTED = str(
+        Topic(subject=Subject.TRAINED_MODEL_IMAGE_BUILDER, status=Status.STARTED)
+    )
     TRAINED_MODEL_IMAGE_BUILDER_SUCCESS = str(
         Topic(subject=Subject.TRAINED_MODEL_IMAGE_BUILDER, status=Status.SUCCESS)
     )
