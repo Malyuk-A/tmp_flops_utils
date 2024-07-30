@@ -17,6 +17,7 @@ class Subject(CustomEnum):
 
 
 class Status(CustomEnum):
+    STARTED = "started"
     FAILED = "failed"
     SUCCESS = "success"
 
@@ -56,6 +57,7 @@ class SupportedTopic(CustomEnum):
         Topic(subject=Subject.TRAINED_MODEL_IMAGE_BUILDER, status=Status.FAILED)
     )
 
+    AGGREGATOR_STARTED = str(Topic(subject=Subject.AGGREGATOR, status=Status.STARTED))
     AGGREGATOR_SUCCESS = str(Topic(subject=Subject.AGGREGATOR, status=Status.SUCCESS))
     AGGREGATOR_FAILED = str(Topic(subject=Subject.AGGREGATOR, status=Status.FAILED))
 
